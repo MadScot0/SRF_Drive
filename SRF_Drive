@@ -1,0 +1,22 @@
+
+public class SRF_Drive {
+	double output[] = new double[2]; //leftOutput is 0, rightOutput is 1
+	
+	
+	public double getOutput(int index) //method used to retrieve output values; call at the start of each periodic for 
+	{									// each motor
+		return output[index];
+	}
+	
+	public void computeTank(double leftPower, double rightPower)//set drive train output values based on dual joystick
+	{
+		output[0] = leftPower;
+		output[1] = rightPower;
+	}
+	
+	public void computeArcade(double forward, double turn)//set drive train output values based on single joystick
+	{
+		output[0] = forward - turn;
+		output[1] = forward + turn;
+	}
+}
