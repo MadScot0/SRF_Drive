@@ -1,7 +1,13 @@
+package org.usfirst.frc.team3826.robot;
 
-public class SRF_Drive {
+public class SRF_Drive {//v1.1
 	double output[] = new double[2]; //leftOutput is 0, rightOutput is 1
 	
+	public void initDrive()
+	{
+		output[0] = 0;
+		output[1] = 0;
+	}
 	
 	public double getOutput(int index) //method used to retrieve output values; call at the start of each periodic for 
 	{									// each motor
